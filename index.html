@@ -63,8 +63,7 @@ body {
     padding: 0 10px; 
     font-size: 16px; 
     line-height: 60px; 
-}
-
+  }
 }
 
 .hero {
@@ -74,24 +73,24 @@ body {
     background-size: cover;
     background-position: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
-    position: relative; 
+    text-align: center;
 }
 
 .hero h1 {
     font-size: 4em;
     font-family: "Metropolis Regular";
-    top: 60px;
-    text-align: center;
+    margin-top: 60px; 
 }
 
 .hero h2 {
- font-size: 2em;
+    font-size: 2em;
     font-family: "Wasted Vindey";
-    top: 65px;
-    text-align: center;
+    margin-top: 20px; 
+}
 
 .hero .cta-button {
     padding: 15px 30px;
@@ -99,10 +98,7 @@ body {
     color: #000;
     text-decoration: none;
     font-size: 20px;
-    position: absolute; 
-    bottom: 40px; 
-    left: 50%;
-    transform: translateX(-50%); 
+    margin-top: 20px;
 }
 
 .hero .cta-button:hover {
@@ -125,11 +121,9 @@ body {
 </div>
 
 <div class="hero">
-    <div>
-        <h1>Chew away your cough!</h1>
-<h2>Try this new chewable herbal supplement for cough.</h2>
-        <a href="#product" class="cta-button">Learn More</a>
-    </div>
+    <h1>Chew away your cough!</h1>
+    <h2>Natural relief for your throat and chest</h2>
+    <a href="#product" class="cta-button">Learn More</a>
 </div>
 
 </body>
