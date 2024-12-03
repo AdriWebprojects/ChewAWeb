@@ -64,32 +64,28 @@ body {
   cursor: pointer;
   display: block;
   position: absolute;
-  right: 30px;  
+  right: 20px;  
   top: 0;
 }
 
 
-.topnav.responsive {
-  display: block;
-  height: auto;
-  width: 100%; 
-}
+@media screen and (max-width: 600px) {
+ 
+  .topnav a:not(.icon) {
+    display: none;
+  }
 
 
-.topnav.responsive a {
-  display: block;
-  text-align: left;
-  padding: 14px;
-}
+  .topnav.responsive a {
+    display: block;
+    text-align: left;
+    padding: 14px;
+  }
 
-
-.topnav a:not(.icon) {
-  display: none;
-}
-
-
-.topnav a.icon {
-  display: block;
+ 
+  .topnav a.icon {
+    display: block;
+  }
 }
 
 
@@ -99,11 +95,8 @@ body {
     text-align: center;
   }
 
-  
-  .topnav.responsive a {
-    display: block;
-    text-align: left;
-    padding: 14px;
+  .topnav a.icon {
+    display: none;
   }
 }
 </style>
