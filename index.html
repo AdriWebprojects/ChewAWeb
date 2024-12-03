@@ -58,48 +58,52 @@ body {
     color: black;
 }
 
-/* Hamburger Icon - Initially hidden */
 .topnav a.icon {
-  display: none; 
   font-size: 18px;
   cursor: pointer;
+  display: block;
+  position: absolute;
+  right: 20px;  
+  top: 0;
 }
-
-/* Mobile styles */
 @media screen and (max-width: 600px) {
-  /* Hide the links except the hamburger menu */
-  .topnav a:not(:first-child) {
+ 
+  .topnav a:not(.icon) {
     display: none;
   }
 
-  /* Show hamburger icon */
-  .topnav a.icon {
-    display: block;
-  }
 
-  /* When the menu is clicked, expand the navbar */
-  .topnav.responsive {
-    height: auto;
-    display: block;
-  }
-
-  /* Align the links vertically when the navbar is expanded */
   .topnav.responsive a {
-    display: block; 
-    text-align: left; 
-    padding: 14px; 
+    display: block;
+    text-align: left;
+    padding: 14px;
   }
 
-  /* Position hamburger icon on the right */
   .topnav.responsive a.icon {
     position: absolute;
-    right: 20px;
+    right: 20px;  
     top: 0;
+  }
+
+
+  .topnav.responsive {
+    display: block;
+    height: auto;
+    width: 100%; 
+  }
+}
+
+
+@media screen and (min-width: 601px) {
+  .topnav a {
+    display: inline-block;
+    text-align: center;
   }
 }
 </style>
 </head>
 <body>
+
 <div class="topnav" id="myTopnav">
     <div class="logo">
         <img src="IMG_0292.png" alt="ChewAHerb Logo">
@@ -121,5 +125,6 @@ function myFunction() {
   }
 }
 </script>
+
 </body>
 </html>
