@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -11,12 +11,14 @@ body {
     padding-top: 90px; 
 }
 
+/* Logo Image */
 .logo img {
     width: 90px;
     height: auto; 
     vertical-align: middle;
 }
 
+/* Navbar Styles */
 .topnav {
     position: fixed;
     top: 0;
@@ -52,11 +54,13 @@ body {
     font-family: "Equilibrium Serif";
 }
 
+
 .topnav a:hover {
     background-color: #ddd;
     color: black;
 }
-    
+
+
 @media screen and (max-width: 1000px) {
   .topnav a {
     padding: 0 10px; 
@@ -65,17 +69,57 @@ body {
   }
 }
 
+/* Hero Section Styles */
+.hero {
+    width: 100%;
+    height: 100vh; 
+    background-image: url('IMG_0303.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4em;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+.hero .cta-button {
+    padding: 15px 30px;
+    background-color: #f8ede7;
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.hero .cta-button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
 </style>
 </head>
 <body>
 <div class="topnav" id="myTopnav">
- <div class="logo">
+    <div class="logo">
         <img src="IMG_0292.png" alt="ChewAHerb Logo">
     </div>
-  <a href="#index.html">Home</a>
-  <a href="#about">About</a>
-  <a href="#product">Product Details</a>
-  <a href="#contact">Contact</a>
+    <a href="#index.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#product">Product Details</a>
+    <a href="#contact">Contact</a>
+</div>
+<div class="hero">
+    <div>
+        <h1>Welcome to ChewAHerb</h1>
+        <a href="#product" class="cta-button">Learn More</a>
+    </div>
 </div>
 
 </body>
