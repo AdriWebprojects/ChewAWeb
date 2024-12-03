@@ -28,6 +28,7 @@ body {
     align-items: center; 
     padding: 0 20px; 
     z-index: 1000; 
+    justify-content: space-between;
 }
 
 .topnav ul {
@@ -68,7 +69,6 @@ body {
     display: block;
   }
 }
-@media screen and (max-width: 5000px) {
   .topnav a.icon {
     float: right;
     display: block;
@@ -78,12 +78,12 @@ body {
   .topnav.responsive {position: relative;}
   .topnav.responsive a.icon {
     position: absolute;
-    right: 0;
+    right: 20px;
     top: 0;
   }
   .topnav.responsive a {
     float: none;
-    display: block;
+    display: inline-block;
     text-align: left;
   }
 }
