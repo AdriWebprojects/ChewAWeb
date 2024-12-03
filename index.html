@@ -58,39 +58,38 @@ body {
     color: black;
 }
 
+
 .topnav a.icon {
   font-size: 18px;
   cursor: pointer;
   display: block;
   position: absolute;
-  right: 20px;  
+  right: 30px;  
   top: 0;
 }
-@media screen and (max-width: 600px) {
- 
-  .topnav a:not(.icon) {
-    display: none;
-  }
 
 
-  .topnav.responsive a {
-    display: block;
-    text-align: left;
-    padding: 14px;
-  }
-
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 20px;  
-    top: 0;
-  }
+.topnav.responsive {
+  display: block;
+  height: auto;
+  width: 100%; 
+}
 
 
-  .topnav.responsive {
-    display: block;
-    height: auto;
-    width: 100%; 
-  }
+.topnav.responsive a {
+  display: block;
+  text-align: left;
+  padding: 14px;
+}
+
+
+.topnav a:not(.icon) {
+  display: none;
+}
+
+
+.topnav a.icon {
+  display: block;
 }
 
 
@@ -98,6 +97,13 @@ body {
   .topnav a {
     display: inline-block;
     text-align: center;
+  }
+
+  
+  .topnav.responsive a {
+    display: block;
+    text-align: left;
+    padding: 14px;
   }
 }
 </style>
