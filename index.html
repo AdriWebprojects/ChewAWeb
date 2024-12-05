@@ -73,33 +73,32 @@ body {
     background-size: cover;
     background-position: center;
     display: flex;
-    justify-content: space-between; /* Space between the text and button */
-    align-items: center; /* Vertically center the content */
+    align-items: center; 
     color: white;
-    padding: 0 20px; /* Add padding for spacing */
+    padding: 0 20px; 
     text-align: left;
 }
 
 .hero-text {
-    max-width: 60%; /* Optional: Adjust width for text */
+    max-width: 60%; 
 }
 
 .hero h1 {
     font-size: 4em;
     font-family: "Metropolis Regular";
-    margin: 0; /* Remove margin for better alignment */
+    margin-left: 100px; 
 }
 
-.hero h2 {
+.hero p {
     font-size: 2em;
     font-family: "Wasted Vindey";
-    margin: 10px 0; /* Add small vertical spacing */
+    margin-left: 100px; 
 }
 
 .hero .cta-container {
     display: flex;
-    flex-direction: column; /* Stack multiple buttons if needed */
-    align-items: flex-end; /* Align button(s) to the right */
+    flex-direction: column; 
+    align-items: flex-end; 
 }
 
 .hero .cta-button {
@@ -110,7 +109,8 @@ body {
     font-size: 20px;
     margin-top: 10px;
     text-align: center;
-    white-space: nowrap; /* Prevent wrapping */
+    white-space: nowrap;
+    margin-right: 100px; 
 }
 
 .hero .cta-button:hover {
@@ -135,7 +135,7 @@ body {
 <div class="hero">
     <div class="hero-text">
         <h1>Chew away your cough!</h1>
-        <h2>Try this new chewable herbal supplement for your cough</h2>
+        <p>Try this new chewable herbal supplement for your cough</p>
     </div>
     <div class="cta-container">
         <a href="#product" class="cta-button">Learn More</a>
