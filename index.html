@@ -74,10 +74,10 @@ body {
     background-position: center;
     display: flex;
     align-items: center; 
+    justify-content: space-between;
     color: white;
     padding: 0 20px; 
     text-align: left;
-    justify-content: space-between;
 }
 
 .hero-text {
@@ -87,51 +87,48 @@ body {
 .hero h1 {
     font-size: 4em;
     font-family: "Metropolis Regular";
-    margin-left: 500px; 
-    margin-bottom: 0;
+    margin: 0; 
 }
 
 .hero p {
     font-size: 2em;
     font-family: "Wasted Vindey";
-    margin-left: 500px; 
-    margin-top: 0;
+    margin-top: 10px;
 }
 
 .hero .cta-container {
     display: flex;
-    flex-direction: column; 
-    align-items: flex-end; 
+    flex-direction: row; /* Align buttons horizontally */
+    gap: 20px; /* Space between buttons */
+    justify-content: center; /* Center both buttons horizontally */
 }
 
-.hero .cta-button {
-    padding: 15px 30px;
-    background-color: #f8ede7;
-    color: #000;
-    text-decoration: none;
-    font-size: 20px;
-    margin-top: 10px;
-    text-align: center;
-    white-space: nowrap;
-    margin-right: 500px; 
-    border-radius: 10px;
-}
-
-.hero .cta-button:hover {
-    background-color: #ddd;
-    color: black;
-}
+.hero .cta-button,
 .hero .secondary-button {
     padding: 15px 30px;
     background-color: #f8ede7;
     color: #000;
     text-decoration: none;
     font-size: 20px;
-    margin-top: 10px;
     text-align: center;
     white-space: nowrap;
-    margin-right: 250px; 
     border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.hero .cta-button:hover,
+.hero .secondary-button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.hero .secondary-button {
+    background-color: #fec222;
+}
+
+.hero .secondary-button:hover {
+    background-color: #e7c118;
 }
 </style>
 </head>
