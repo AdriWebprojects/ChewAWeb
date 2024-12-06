@@ -103,7 +103,7 @@ margin-left: 25%;
     flex-direction: row; 
     gap: 20px; 
     justify-content: center; 
-margin-right: 25%;
+margin-right: 23%;
 }
 
 .hero .cta-button {
@@ -133,6 +133,60 @@ margin-right: 25%;
     white-space: nowrap; 
     border-radius: 10px;
 }
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.carousel-slide {
+    min-width: 100%; /* Ensures one slide is fully visible */
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: block;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
 </style>
 </head>
 <body>
@@ -161,5 +215,51 @@ Natural and kid-friendly!<br>
     </div>
 </div>
 
+<section class="features-section">
+    <div class="carousel">
+    <button class="prev-btn">&lt;</button>
+    <div class="carousel-track-container">
+        <ul class="carousel-track">
+            <li class="carousel-slide">
+                <img src="IMG_0292.png" alt="Feature 1">
+            </li>
+            <li class="carousel-slide">
+                <img src="IMG_0292.png" alt="Feature 2">
+            </li>
+            <li class="carousel-slide">
+                <img src="IMG_0292.png" alt="Feature 3">
+            </li>
+        </ul>
+    </div>
+    <button class="next-btn">&gt;</button>
+</div>
+</section>
+<script>
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const nextButton = document.querySelector('.next-btn');
+const prevButton = document.querySelector('.prev-btn');
+
+let currentIndex = 0;
+
+function updateSlidePosition() {
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
+
+nextButton.addEventListener('click', () => {
+    if (currentIndex < slides.length - 1) {
+        currentIndex++;
+        updateSlidePosition();
+    }
+});
+
+prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateSlidePosition();
+    }
+});
+    </script>
 </body>
 </html>
