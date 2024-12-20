@@ -345,19 +345,27 @@ color: white;
 
 .footer h1 {
 margin-bottom: 20%;
+
 }
 
 .footer p {
 margin-bottom: 17%;
 }
+
+.footer img {
+margin-bottom: 23%;
+}
+
+.grid-layout {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+  }
 </style>
 </head>
 <body>
 
-.footer img {
-width: 20px;
-height: 20px;
-}
+
 
 <div class="topnav" id="myTopnav">
     <div class="logo">
@@ -442,18 +450,18 @@ frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media
 </section>
 
 <section class="footer">
-<div style="display: grid; grid-auto-flow: column; gap: 20px;">
+<div class="grid-layout">
 <img src="12340490.png" alt="Feature 3" width="20px" height="20px">
 <a href="https://youtu.be/osON6QMjEPk?si=2DIHFNOSXx14s15j">
   <img src="YouTube_full-color_icon_(2017).svg.png" alt="Youtube" width="20px" height="20px">
 </a>
 </div>
-<div style="display: grid; grid-auto-flow: column; gap: 20px;">
+<div class="grid-layout">
   <h1>Email</h1>
   <h1>Youtube</h1>
 </div>
 
-<div style="display: grid; grid-auto-flow: column; gap: 20px;">
+<div class="grid-layout">
 <p>Get in touch</p>
 <p>Support our <br>
 youtube channel</p>
