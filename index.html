@@ -331,6 +331,7 @@ align-items: center;
 color: white;
 }
 
+
 .footer {
 width: 100%;
 height: 90vh;
@@ -340,28 +341,27 @@ background-position: center;
 display: flex;
 color: white;
 }
-
-
-
-.footer h1 {
-margin-top: 20%;
-
-}
-
-.footer p {
-margin-top: 17%;
-}
-
 .footer img {
-margin-top: 23%;
+  display: inline-block;
+  padding: 0 50px; 
 }
-
-.grid-layout {
-    display: grid;
-    column-count: 3;
-    column-gap: 20px;
-    margin-left: 40%
-  }
+.footer img:nth-of-type(1) {
+margin-left: 100px;
+}
+.footer h1 {
+  display: inline-block;
+  padding: 0 50px; 
+}
+  .footer h1:nth-of-type(1) {
+margin-left: 100px;
+}
+.footer p {
+  display: inline-block;
+  padding: 0 50px; 
+}
+  .footer p:nth-of-type(1) {
+margin-left: 100px;
+}
 </style>
 </head>
 <body>
@@ -458,13 +458,13 @@ frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media
 </a>
 </div>
 <div class="grid-layout">
-  <h1>Email <br>
-  Youtube </h1>
+  <h1>Email <br></h1>
+  <h1>Youtube </h1>
 </div>
 
 <div class="grid-layout">
-<p>Get in touch <br>
-Support our <br>
+<p>Get in touch</p>
+<p></p>Support our <br>
 youtube channel</p>
 </div>
 </section>
