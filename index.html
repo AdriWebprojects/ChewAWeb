@@ -1,490 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: white;
+            padding-top: 90px;
+            overflow-x: hidden;
+        }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #white;
-    padding-top: 90px; 
-    overflow-x: hidden;
-}
+        .logo img {
+            width: 90px;
+            height: auto;
+            vertical-align: middle;
+        }
 
-.logo img {
-    width: 90px;
-    height: auto; 
-    vertical-align: middle;
-}
+        .topnav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #f8ede7;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+        }
 
-.topnav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #f8ede7;
-    height: 90px; 
-    display: flex; 
-    align-items: center; 
-    padding: 0 20px; 
-    z-index: 1000; 
-}
+        .topnav ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            margin-left: auto;
+        }
 
-.topnav ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    display: flex; 
-    margin-left: auto; 
-}
+        .topnav li {
+            display: inline-block;
+        }
 
-.topnav li {
-    display: inline-block;
-}
+        .topnav a {
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 0 20px;
+            text-decoration: none;
+            font-size: 20px;
+            line-height: 90px;
+            font-family: "Equilibrium Serif";
+        }
 
-.topnav a {
-    display: block;
-    color: #000000;
-    text-align: center;
-    padding: 0 20px;
-    text-decoration: none;
-    font-size: 20px;
-    line-height: 90px; 
-    font-family: "Equilibrium Serif";
-}
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
 
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
+        @media screen and (max-width: 1000px) {
+            .topnav a {
+                padding: 0 10px;
+                font-size: 16px;
+                line-height: 60px;
+            }
+        }
 
-@media screen and (max-width: 1000px) {
-  .topnav a {
-    padding: 0 10px; 
-    font-size: 16px; 
-    line-height: 60px; 
-  }
-}
+        .hero {
+            width: 100%;
+            height: 50vh;
+            background-color: #2fad6d;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 0 20px;
+            text-align: left;
+            justify-content: space-between;
+        }
 
-.hero {
-    width: 100%;
-    height: 50vh; 
-    background-color: #2fad6d;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center; 
-    color: white;
-    padding: 0 20px; 
-    text-align: left;
-    justify-content: space-between;
-}
+        .hero-text {
+            max-width: 60%;
+            margin-left: 20%;
+        }
 
-.hero-text {
-max-width: 60%; 
-margin-left: 20%;
-}
+        .hero h1 {
+            font-size: 3vw;
+            font-family: "Metropolis Regular";
+            margin-bottom: 0;
+        }
 
-.hero h1 {
-font-size: 3vw;
-font-family: "Metropolis Regular";
-margin-bottom: 0;
-}
+        .hero p {
+            font-size: 1.5vw;
+            font-family: "Wasted Vindey";
+            margin-top: 0;
+        }
 
-.hero p {
-font-size: 1.5vw;
-font-family: "Wasted Vindey";
-margin-top: 0;
-}
+        .hero .cta-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            justify-content: center;
+        }
 
-.hero .cta-container {
-display: flex;
-flex-direction: row; 
-gap: 20px; 
-justify-content: center; 
-}
+        .hero .cta-button,
+        .hero .secondary-button {
+            padding: 15px 30px;
+            color: #000;
+            text-decoration: none;
+            font-size: 20px;
+            margin-top: 10px;
+            text-align: center;
+            white-space: nowrap;
+            border-radius: 10px;
+        }
 
-.hero .cta-button {
-padding: 15px 30px;
-background-color: #FFFFFF;
-color: #000;
-text-decoration: none;
-font-size: 20px;
-margin-top: 10px;
-text-align: center;
-white-space: nowrap;
-border-radius: 10px;
-}
+        .hero .cta-button {
+            background-color: #FFFFFF;
+        }
 
-.hero .cta-button:hover {
-background-color: #ddd;
-color: black;
-}
-.hero .secondary-button {
-padding: 15px 30px;
-background-color: #fec222;
-color: #000;
-text-decoration: none;
-font-size: 20px;
-margin-top: 10px;
-text-align: center;
-white-space: nowrap; 
-border-radius: 10px;
-}
-.hero img {
-width: 25%;
-position: right; 
-margin-right: 8%;
-}
+        .hero .cta-button:hover,
+        .hero .secondary-button:hover {
+            background-color: #ddd;
+            color: black;
+        }
 
+        .hero .secondary-button {
+            background-color: #fec222;
+        }
 
-.carousel {
-display: flex;
-align-items: center;
-justify-content: center;
-position: relative;
-width: 100%;
-max-width: 800px;
-margin: 0 auto;
-overflow: visible;
-}
+        .hero img {
+            width: 25%;
+            margin-right: 8%;
+        }
 
-.carousel-track-container {
-overflow: hidden;
-width: 100%;
-}
+        .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: visible;
+        }
 
-.carousel-track {
-display: flex;
-transition: transform 0.5s ease-in-out;
-list-style: none;
-padding: 0;
-margin: 0;
-}
+        .carousel-track-container {
+            overflow: hidden;
+            width: 100%;
+        }
 
-.carousel-slide {
-min-width: 100%; 
-box-sizing: border-box;
-}
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-.carousel-slide img {
-width: 100%;
-display: block;
-border-radius: 20px;
-}
+        .carousel-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
 
-.prev-btn, .next-btn {
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-color: white;
-border: none;
-padding: 20px;
-cursor: pointer;
-z-index: 1000;
-border-radius: 50%;
-font-size: 35px;
-width: 50px;
-height: 50px;
-align-items: center;
-justify-content: center;
-display: flex;
-}
+        .carousel-slide img {
+            width: 100%;
+            display: block;
+            border-radius: 20px;
+        }
 
-.prev-btn {
-left: -50px;
-background-color:#008ed8;
-}
+        .prev-btn,
+        .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            border: none;
+            padding: 20px;
+            cursor: pointer;
+            z-index: 1000;
+            border-radius: 50%;
+            font-size: 35px;
+            width: 50px;
+            height: 50px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
 
-.next-btn {
-right: -50px;
-background-color: #e95d23;
-}
-    
-.iframe {
-width: 100%;
-height: 50vh;
-  display: flex;
-  justify-content: center; 
-  align-items: center;  
-}
-    
-.features-section h1 {
-font-size: 50px;
-text-align: center;
-font-family: "UNI SANS HEAVY CAPS", sans-serif;
-letter-spacing: -7px;
-}
-.features-title .letter {
-display: inline-block;
-font-size: 50px;
-}
-.features-title .letter:nth-child(1) {
-color: #068fd3;
-}
+        .prev-btn {
+            left: -50px;
+            background-color: #008ed8;
+        }
 
-.features-title .letter:nth-child(2) {
-color: #fec222;
-}
+        .next-btn {
+            right: -50px;
+            background-color: #e95d23;
+        }
 
-.features-title .letter:nth-child(3) {
-color: #ff96ab;
-}
+        .iframe {
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.features-title .letter:nth-child(4) {
-color: #fe8c21;
-}
+        .features-section h1 {
+            font-size: 50px;
+            text-align: center;
+            font-family: "UNI SANS HEAVY CAPS", sans-serif;
+            letter-spacing: -7px;
+        }
 
-.features-title .letter:nth-child(5) {
-color: #068fd3;
-}
+        .features-title .letter {
+            display: inline-block;
+            font-size: 50px;
+        }
 
-.features-title .letter:nth-child(6) {
-color: #fe8c21;
-}
+        .features-title .letter:nth-child(1) {
+            color: #068fd3;
+        }
 
-.features-title .letter:nth-child(7) {
-color: #31ac6a;
-}
-.features-title .letter:nth-child(8) {
-color: #ff96ab;
-}
+        .features-title .letter:nth-child(2) {
+            color: #fec222;
+        }
 
-.features-title .letter:nth-child(9) {
-color: orange;
-}
+        .features-title .letter:nth-child(3) {
+            color: #ff96ab;
+        }
 
-.features-title .letter:nth-child(10) {
-color: #068fd3;
-}
+        .features-title .letter:nth-child(4) {
+            color: #fe8c21;
+        }
 
-.features-title .letter:nth-child(11) {
-color: #fec222;
-}
+        .features-title .letter:nth-child(5) {
+            color: #068fd3;
+        }
 
-.features-title .letter:nth-child(12) {
-color: #ff96ab;
-}
+        .features-title .letter:nth-child(6) {
+            color: #fe8c21;
+        }
 
-.features-title .letter:nth-child(13) {
-color: blue;
-}
+        .features-title .letter:nth-child(7) {
+            color: #31ac6a;
+        }
 
-.features-title .letter:nth-child(14) {
-color: #068fd3;
-}
-.features-title .letter:nth-child(15) {
-color: #fe8c21;
-}
+        .features-title .letter:nth-child(8) {
+            color: #ff96ab;
+        }
 
-.features-title .letter:nth-child(16) {
-color: #31ac6a;
-}
+        .features-title .letter:nth-child(9) {
+            color: orange;
+        }
 
-.features-title .letter:nth-child(17) {
-color: #ff96ab;
-}
+        .features-title .letter:nth-child(10) {
+            color: #068fd3;
+        }
 
-.features-title .letter:nth-child(18) {
-color: #fe8c21;
-}
+        .features-title .letter:nth-child(11) {
+            color: #fec222;
+        }
 
-.features-title .letter:nth-child(19) {
-color: #068fd3;
-}
+        .features-title .letter:nth-child(12) {
+            color: #ff96ab;
+        }
 
-.features-title .letter:nth-child(20) {
-color: #ff96ab;
-}
+        .features-title .letter:nth-child(13) {
+            color: blue;
+        }
 
-.features-title .letter:nth-child(21) {
-color: #fe8c21;
-}
+        .features-title .letter:nth-child(14) {
+            color: #068fd3;
+        }
 
-.RFY {
-width: 100%;
-height: 60vh;
-background-color: #fec222;
-background-size: cover;
-background-position: center;
-display: flex;
-align-items: center; 
-color: white;
-}
+        .features-title .letter:nth-child(15) {
+            color: #fe8c21;
+        }
 
-.RFY h1 { 
-font-size: 2.5vw;
-font-family: "Metropolis Regular";
-margin-left: 20%;
-margin-bottom: 17%;
-max-width: 20%;
-}
-.aboutsection { 
-width: 100%;
-height: 75vh;
-background-color: #e85623;
-background-size: cover;
-background-position: center;
-display: flex;
-align-items: center; 
-color: white;
-}
+        .features-title .letter:nth-child(16) {
+            color: #31ac6a;
+        }
 
+        .features-title .letter:nth-child(17) {
+            color: #ff96ab;
+        }
 
-.footer {
-margin-bottom: 0;
-width: 100%;
-background-color: #0d254e;
-background-size: cover;
-background-position: center;
-display: flex;
-color: white;
-padding: 100px 30%;
-}
+        .features-title .letter:nth-child(18) {
+            color: #fe8c21;
+        }
 
-  .footer div {
-text-align: center;
+        .features-title .letter:nth-child(19) {
+            color: #068fd3;
+        }
 
-}
+        .features-title .letter:nth-child(20) {
+            color: #ff96ab;
+        }
 
-.col-1 {
-  width: 20%;
-  border-right: 2px solid #000; 
-}
-  .col-2 {
-width: 20%;
-}
+        .features-title .letter:nth-child(21) {
+            color: #fe8c21;
+        }
 
-</style>
+        .RFY {
+            width: 100%;
+            height: 60vh;
+            background-color: #fec222;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .RFY h1 {
+            font-size: 2.5vw;
+            font-family: "Metropolis Regular";
+            margin-left: 20%;
+            margin-bottom: 17%;
+            max-width: 20%;
+        }
+
+        .aboutsection {
+            width: 100%;
+            height: 75vh;
+            background-color: #e85623;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .footer {
+            margin-bottom: 0;
+            width: 100%;
+            background-color: #0d254e;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            color: white;
+            padding: 100px 30%;
+        }
+
+        .footer div {
+            text-align: center;
+        }
+
+        .col-1 {
+            width: 20%;
+            border-right: 2px solid #000;
+        }
+
+        .col-2 {
+            width: 20%;
+        }
+    </style>
 </head>
+
 <body>
-
-
-
-<div class="topnav" id="myTopnav">
-    <div class="logo">
-        <img src="IMG_0292.png" alt="ChewAHerb Logo">
+    <div class="topnav" id="myTopnav">
+        <div class="logo">
+            <img src="IMG_0292.png" alt="ChewAHerb Logo">
+        </div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product.html">Product Details</a>
+        <a href="contact.html">Contact</a>
     </div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="product.html">Product Details</a>
-    <a href="contact.html">Contact</a>
-</div>
 
-<div class="hero">
-    <div class="hero-text">
-        <h1>Chew away your cough!</h1>
-<p>
-Try this new chewable herbal supplement!<br>
-Natural and kid-friendly!<br>
-</p>
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Chew away your cough!</h1>
+            <p>Try this new chewable herbal supplement!<br>Natural and kid-friendly!<br></p>
+        </div>
+        <div class="cta-container">
+            <a href="#product" class="cta-button">LEARN MORE</a>
+            <a href="https://www.youtube.com/@Veritasium" class="cta-button secondary-button">SUBSCRIBE NOW!</a>
+        </div>
+        <img src="1000007112-removebg-preview.png">
     </div>
-    <div class="cta-container">
-        <a href="#product" class="cta-button">LEARN MORE</a>
-   <a href="https://www.youtube.com/@Veritasium" class="cta-button secondary-button">SUBSCRIBE NOW!</a>
-    </div>
-<img src="1000007112-removebg-preview.png">
-</div>
 
-<div style="height: 100px;"></div>
-<section class="iframe">
-<iframe width="720" height="405" src="https://www.youtube.com/embed/JO334h_PhuU?si=bXvmgS-UK_6AoLPo" title="YouTube video player" 
-frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</section>
-<div style="height: 100px;"></div>
-<section class="features-section">
-<h1 class="features-title">
-<span class="letter">F</span>
-<span class="letter">E</span>
-<span class="letter">A</span>
-<span class="letter">T</span>
-<span class="letter">U</span>
-<span class="letter">R</span>
-<span class="letter">E</span>
-<span class="letter">S</span>
-<span class="letter"> </span>
-<span class="letter">A</span>
-<span class="letter">N</span>
-<span class="letter">D</span>
-<span class="letter"> </span>
-<span class="letter">B</span>
-<span class="letter">E</span>
-<span class="letter">N</span>
-<span class="letter">E</span>
-<span class="letter">F</span>
-<span class="letter">I</span>
-<span class="letter">T</span>
-<span class="letter">S</span>
+    <div style="height: 100px;"></div>
+    <section class="iframe">
+        <iframe width="720" height="405" src="https://www.youtube.com/embed/JO334h_PhuU?si=bXvmgS-UK_6AoLPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
 
-</h1>
-    <div class="carousel">
-    <button class="prev-btn">&#8592;</button>
-    <div class="carousel-track-container">
-        <ul class="carousel-track">
-            <li class="carousel-slide">
-                <img src="IMG_0292.png" alt="Feature 1">
-            </li>
-            <li class="carousel-slide">
-                <img src="IMG_0292.png" alt="Feature 2">
-            </li>
-            <li class="carousel-slide">
-                <img src="IMG_0292.png" alt="Feature 3">
-            </li>
-        </ul>
-    </div>
-    <button class="next-btn">&#8594;</button>
-</div>
-</section>
-<div style="height: 100px;"></div>
-<section class="RFY">
-<h1>Is ChewAHerb Right for You?</h1>
-</section>
-<section class="aboutsection">
+    <div style="height: 100px;"></div>
+    <section class="features-section">
+        <h1 class="features-title">
+            <span class="letter">F</span>
+            <span class="letter">E</span>
+            <span class="letter">A</span>
+            <span class="letter">T</span>
+            <span class="letter">U</span>
+            <span class="letter">R</span>
+            <span class="letter">E</span>
+            <span class="letter">S</span>
+            <span class="letter"> </span>
+            <span class="letter">A</span>
+            <span class="letter">N</span>
+            <span class="letter">D</span>
+            <span class="letter"> </span>
+            <span class="letter">B</span>
+            <span class="letter">E</span>
+            <span class="letter">N</span>
+            <span class="letter">E</span>
+            <span class="letter">F</span>
+            <span class="letter">I</span>
+            <span class="letter">T</span>
+            <span class="letter">S</span>
+        </h1>
 
-</section>
+        <div class="carousel">
+            <button class="prev-btn">&#8592;</button>
+            <div class="carousel-track-container">
+                <ul class="carousel-track">
+                    <li class="carousel-slide">
+                        <img src="IMG_0292.png" alt="Feature 1">
+                    </li>
+                    <li class="carousel-slide">
+                        <img src="IMG_0292.png" alt="Feature 2">
+                    </li>
+                    <li class="carousel-slide">
+                        <img src="IMG_0292.png" alt="Feature 3">
+                    </li>
+                </ul>
+            </div>
+            <button class="next-btn">&#8594;</button>
+        </div>
+    </section>
 
-<section class="footer">
-<div class="col-1">
-<a href="https://youtu.be/osON6QMjEPk?si=2DIHFNOSXx14s15j">
-  <img src="YouTube_full-color_icon_(2017).svg.png" alt="Youtube" width="140px" height="100px">
-</a>
-<h1>Youtube</h1>
-<p>Support our channel</p>
-</div>
-<div class="col-2">
-<img src="12340490.png" alt="Feature 3" width="100px" height="100px">
-<h1>Email</h1>
-<p>Get in touch</p>
-</div>
-</section>
+    <div style="height: 100px;"></div>
+    <section class="RFY">
+        <h1>Is ChewAHerb Right for You?</h1>
+    </section>
 
-<script>
-const track = document.querySelector('.carousel-track');
-const slides = Array.from(track.children);
-const nextButton = document.querySelector('.next-btn');
-const prevButton = document.querySelector('.prev-btn');
+    <section class="aboutsection"></section>
 
-let currentIndex = 0;
+    <section class="footer">
+        <div class="col-1">
+            <a href="https://youtu.be/osON6QMjEPk?si=2DIHFNOSXx14s15j">
+                <img src="YouTube_full-color_icon_(2017).svg.png" alt="Youtube" width="140px" height="100px">
+            </a>
+            <h1>Youtube</h1>
+            <p>Support our channel</p>
+        </div>
+        <div class="col-2">
+            <img src="12340490.png" alt="Feature 3" width="100px" height="100px">
+            <h1>Email</h1>
+            <p>Get in touch</p>
+        </div>
+    </section>
 
-function updateSlidePosition() {
-    const slideWidth = slides[0].getBoundingClientRect().width;
-    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-}
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.next-btn');
+        const prevButton = document.querySelector('.prev-btn');
 
-nextButton.addEventListener('click', () => {
-    if (currentIndex < slides.length - 1) {
-        currentIndex++;
-        updateSlidePosition();
-    }
-});
+        let currentIndex = 0;
 
-prevButton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateSlidePosition();
-    }
-});
+        function updateSlidePosition() {
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < slides.length - 1) {
+                currentIndex++;
+                updateSlidePosition();
+            }
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlidePosition();
+            }
+        });
     </script>
 </body>
 </html>
