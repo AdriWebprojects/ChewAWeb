@@ -305,36 +305,45 @@
             color: #fe8c21;
         }
 
-        .RFY {
+    .RFY {
             width: 100%;
-            height: 60vh;
+            height: 80vh;
             background-color: #fec222;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            color: white;
-        }
+      }
+        .RFYrow-1{
+display: flex;
+justify-content: center;
+text-align: center;
+}
+      .RFYrow-1 h1{
+font-size: 3em;
+margin:10px;
+margin-top:110px;
+}
+      .RFYrow-1 p, .RFYrow-2 p{
+margin:10px;
+}
+.RFYrow-2{
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+}
 
-        .RFY h1 {
-            font-size: 2.5vw;
-            font-family: "Metropolis Regular";
-            margin-left: 20%;
-            margin-bottom: 17%;
-            max-width: 20%;
-        }
-
-        .aboutsection {
-            width: 100%;
-            height: 75vh;
-            background-color: #e85623;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-
+#rcorners1, #rcorners2 {
+  border-radius: 8px;
+  padding: 20px;  
+  width: 288px;
+}
+#rcorners1{
+background:#ffdca7; 
+height: 150px; 
+margin-top: 10vh;
+}
+ #rcorners2{
+background:#ffdca7;
+height: 150px;
+}
              footer {
 height: 35vh;
 background-color: #0d254e;
@@ -403,6 +412,9 @@ text-transform: uppercase;
 letter-spacing: 1px;
 font-weight: 400;
 magin: 0px 5px;
+}
+.row-1{
+
 }
     </style>
 </head>
@@ -482,7 +494,22 @@ magin: 0px 5px;
 
     <div style="height: 100px;"></div>
     <section class="RFY">
-        <h1>Is ChewAHerb Right for You?</h1>
+        <div class="RFYrow-1">
+        <h1>Is ChewAHerb<br>
+Right for You?</h1>
+        <p class="text-with-image" id="rcorners1">
+</p>
+        <p class="text-with-image" id="rcorners1">
+</p>
+        </div>
+        <div class="RFYrow-2">
+        <p class="text-with-image" id="rcorners2">
+</p>
+        <p class="text-with-image" id="rcorners2">
+</p>
+        <p class="text-with-image" id="rcorners2">
+</p>
+        </div>
     </section>
 
     <section class="aboutsection"></section>
@@ -495,9 +522,9 @@ magin: 0px 5px;
 <div style="height: 2.5vh"></div>
    <div class="footerNav">
 <ul>
-<li><a href="">Home</a></li>
-<li><a href="">About</a></li>
-<li><a href="">Product</a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="product.html">Product</a></li>
 <li><a href="">Contact Us</a></li>
 </ul>
 </div>
