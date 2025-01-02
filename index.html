@@ -306,11 +306,18 @@
         .features-title .letter:nth-child(21) {
             color: #fe8c21;
         }
-
+.container {
+    flex: 1; 
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
       .RFY {
             width: 100%;
             height: 70vh;
             background-color: #c73724;
+            z-index: 1;
       }
         .RFYrow-1{
 display: flex;
@@ -364,6 +371,7 @@ height: 160px;
              footer {
 height: 45vh;
 background-color: #0d254e;
+z-index: 1;
 }
       .socialIcons a i{
     font-size: 4em;
@@ -442,6 +450,19 @@ magin: 0px 5px;
             width: 50px; 
             height: auto; 
         }
+.overlap-box {
+    position: absolute;
+    top:100%;  
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 80%;
+    height: 200px; 
+    padding: 20px; 
+    background-color: #fec223; 
+    color: white; 
+    text-align: center; 
+    z-index: 2; 
+    border-radius: 8px; 
     </style>
 </head>
 
@@ -517,7 +538,7 @@ magin: 0px 5px;
             <button class="next-btn">&#8594;</button>
         </div>
     </section>
-
+<div class="container">
     <div style="height: 100px;"></div>
     <section class="RFY">
         <div class="RFYrow-1">
@@ -562,7 +583,10 @@ more convenient way
 </p>
         </div>
     </section>
-
+<div class="overlap-box">
+        <p>This box overlaps the two sections.</p>
+    </div>
+  </div>
     <section class="aboutsection"></section>
 <footer>
    <div style="height: 6.25vh"></div>
