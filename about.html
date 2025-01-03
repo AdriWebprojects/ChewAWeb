@@ -88,7 +88,9 @@ body {
 }
 
 .who-section, .what-section, .mission-section {
-    text-align: center;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
     margin: 0;
     width: 100%;
     height: 40vh;
@@ -104,15 +106,27 @@ margin: 0;
 }
 .who-section p, .what-section p, .mission-section p {
 }
-.who-section{
-background-color: #31ac6b;
+.rcorners1, .rcorners2, .rcorners3 {
+  border-radius: 15px;
+  padding: 10px;  
+  width: 20vh;
 }
-.what-section {
+.rcorners1{
+background-color: #31ac6b; 
+height: 30vh;
+text-align: center;
+}
+.rcorners2{
 background-color: #018ed6;
+height: 30vh;
+text-align: center;
 }
-.mission-section {
+.rcorners3{
 background-color: #e75323;
+height: 30vh;
+text-align: center;
 }
+
 </style>
 </head>
 <body>
@@ -129,20 +143,26 @@ background-color: #e75323;
 <div class="hero">
 </div>
 <section class="who-section">
+<div class="rcorners1">
 <img style="text-align: center" src="IMG_2020.JPG">
 <h1>Who we are</h1>
 <p>We are a company nigger nigger</p>
+</div>
 </section>
 <section class="what-section">
+<div class="rcorners2">
 <h1>What we do</h1>
 <p>We are a company nigger nigger</p>
+</div>
 </section>
 <section class="mission-section">
+<div class="rcorners3">
 <h1>Our Mission</h1>
 <p>
-Our mission is to provide our customers with a safe 
-and effective natural cough remedy while offering 
+Our mission is to provide our customers with a safe<br> 
+and effective natural cough remedy while offering<br>
 greater convenience and fun through our product. </p>
+</div>
 </section>
 </body>
 </html>
