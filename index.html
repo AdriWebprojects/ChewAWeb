@@ -494,6 +494,12 @@ font-size: 3.5em;
 font-family: 'Bowlby One', cursive;
 font-weight: 400; 
 }
+.moving-image {
+    position: absolute;
+    width: 100px; /* Adjust as needed */
+    height: auto;
+    z-index: 2; /* Ensure it appears above the background image but below the text */
+}
     </style>
 </head>
 
@@ -618,6 +624,8 @@ more convenient way
         <img src="Untitled_design-removebg-preview.png">
         <p>Purchase and use our product to</p>
         <h1>CHEW AWAY YOUR COUGH!</h1>
+<img src="image1.png" alt="Parallax Image 1" class="parallax-image" data-speed="2">
+        <img src="image2.png" alt="Parallax Image 2" class="parallax-image" data-speed="4">
     </div>
   </div>
     <section class="aboutsection"></section>
@@ -667,6 +675,18 @@ more convenient way
                 updateSlidePosition();
             }
         });
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    const image1 = document.getElementById('image1');
+    const image2 = document.getElementById('image2');
+
+    // Adjust these values to control the speed and direction
+    const speed1 = 0.5;
+    const speed2 = -0.5;
+
+    image1.style.transform = `translateY(${scrollPosition * speed1}px)`;
+    image2.style.transform = `translateY(${scrollPosition * speed2}px)`;
+});
     </script>
 </body>
 </html>
