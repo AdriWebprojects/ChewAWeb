@@ -432,6 +432,17 @@ line-height: 30px;
     color: white;
     transition: 0.5s;
 }
+.hidden {
+opacity: 0;
+filter: blur(5px);
+transform: translateX(-100%);
+transition: all 1s;
+}
+.show{
+opacity: 1;
+filter: blur(0);
+transform: translateX(0);
+}
     </style>
 </head>
 
@@ -448,7 +459,7 @@ line-height: 30px;
         </div>
     </div>
 
-    <div class="hero">
+    <div class="hero hidden">
         <div class="hero-text">
             <h1>Chew away your cough!</h1>
             <p>Try this new chewable herbal supplement!<br>Natural and kid-friendly!<br></p>
@@ -460,12 +471,12 @@ line-height: 30px;
     </div>
 
     <div style="height: 100px;"></div>
-    <section class="iframe">
+    <section class="iframe hidden">
         <iframe width="720" height="405" src="https://www.youtube.com/embed/JO334h_PhuU?si=bXvmgS-UK_6AoLPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </section>
 
     <div style="height: 100px;"></div>
-    <section class="features-section">
+    <section class="features-section hidden">
 
         <div class="carousel">
             <button class="prev-btn">&#8592;</button>
@@ -493,7 +504,7 @@ line-height: 30px;
     </section>
 <div class="container">
     <div style="height: 100px;"></div>
-    <section class="RFY">
+    <section class="RFY hidden">
         <div class="RFYrow-1">
         <h1>Is ChewAHerb<br>
 Right for You?</h1>
@@ -536,14 +547,13 @@ more convenient way
 </p>
         </div>
     </section>
-<div class="overlap-box">
+<div class="overlap-box hidden">
         <img src="Untitled_design-removebg-preview.png">
         <p>Buy one today and</p>
         <h1>CHEW AWAY YOUR COUGH!</h1>
     </div>
   </div>
-    <section class="aboutsection"></section>
-<footer>
+<footer class="hidden">
    <div style="height: 6.25vh"></div>
    <div class="footerContainer">
    <div class="socialIcons">
@@ -589,6 +599,19 @@ more convenient way
                 updateSlidePosition();
             }
         });
+        const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+console.log(entry)
+if (entry.isIntersecting) {
+entry.target.classList.add(‘show’);
+} else {
+entry.target.classList.remove(‘show’);
+}
+});
+});
+
+const hiddenElements = document.querySelectorAll(‘.hidden’);
+        hiddenElements.forEach((el) => observer.observe(el));
     </script>
 </body>
 </html>
