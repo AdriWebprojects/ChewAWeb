@@ -66,45 +66,96 @@ body {
   }
 }
 
-.hero {
-    width: 100%;
-    height: 70vh; 
-    background-image: url('IMG_0305.jpeg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
+.socialiconnav {
+    vertical-align: middle;
 }
 
-.hero h1 {
-    font-size: 4em;
-    font-family: "Metropolis Regular";
-    margin-top: 60px; 
+.socialiconnav a {
+text-decoration: none;
+padding: 10px;
+border-radius: 50%;
+line-height: 30px;
 }
 
-.hero h2 {
+.socialiconnav a i {
     font-size: 2em;
-    font-family: "Wasted Vindey";
-    margin-top: 20px; 
+    color: #FF0000;
+    opacity: 0.9;
 }
 
-.hero .cta-button {
-    padding: 15px 30px;
-    background-color: #f8ede7;
-    color: #000;
-    text-decoration: none;
-    font-size: 20px;
-    margin-top: 20px;
+.socialiconnav a:hover {
+    background-color: #111;
+    transition: 0.5s;
 }
 
-.hero .cta-button:hover {
-    background-color: #ddd;
-    color: black;
+.socialiconnav a:hover i {
+    color: white;
+    transition: 0.5s;
 }
+
+ .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: visible;
+        }
+
+        .carousel-track-container {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            display: block;
+            border-radius: 20px;
+        }
+
+        .prev-btn,
+        .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            border: none;
+            padding: 20px;
+            cursor: pointer;
+            z-index: 1000;
+            border-radius: 50%;
+            font-size: 35px;
+            width: 50px;
+            height: 50px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .prev-btn {
+            left: -50px;
+            background-color: #008ed8;
+        }
+
+        .next-btn {
+            right: -50px;
+            background-color: #e95d23;
+        }
 
 </style>
 </head>
@@ -117,14 +168,63 @@ body {
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="product.html">Product</a>
-    
+<div class="socialiconnav">
+        <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>  
 </div>
+ <section class="features-section">
 
-<div class="hero">
-    <h1>Chew away your cough!</h1>
-    <h2>Try this new slave</h2>
-    <a href="#product" class="cta-button">Learn More</a>
-</div>
+        <div class="carousel">
+            <button class="prev-btn">&#8592;</button>
+            <div class="carousel-track-container">
+                <ul class="carousel-track">
+                    <li class="carousel-slide">
+                        <img src="Card (2).jpg" alt="Feature 1">
+                    </li>
+                    <li class="carousel-slide">
+                        <img src="Card.jpg" alt="Feature 2">
+                    </li>
+                    <li class="carousel-slide">
+                        <img src="Card (3).jpg" alt="Feature 3">
+                    </li>
+<li class="carousel-slide">
+                        <img src="Card (1).jpg" alt="Feature 4">
+                    </li>
+<li class="carousel-slide">
+                        <img src="Card (4).jpg" alt="Feature 5">
+                    </li>
+                </ul>
+            </div>
+            <button class="next-btn">&#8594;</button>
+        </div>
+    </section>
 
+<script>
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.next-btn');
+        const prevButton = document.querySelector('.prev-btn');
+
+        let currentIndex = 0;
+
+        function updateSlidePosition() {
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < slides.length - 1) {
+                currentIndex++;
+                updateSlidePosition();
+            }
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlidePosition();
+            }
+        });
+    </script>
 </body>
 </html>
