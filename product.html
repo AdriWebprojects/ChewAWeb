@@ -229,7 +229,37 @@ letter-spacing: 1px;
 font-weight: 400;
 magin: 0px 5px;
 }
+.container {
+    display: flex;
+    gap: 10px;
+}
 
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 200px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.card .content {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.card.expanded {
+    width: 400px;
+}
+
+.card.expanded .content {
+    max-height: 200px;
+    opacity: 1;
+}
 </style>
 </head>
 <body>
@@ -246,6 +276,26 @@ magin: 0px 5px;
         </div>  
 </div>
 <div style="height: 100px;"></div>
+<div class="container">
+        <div class="card" id="card1">
+            <h2>Card 1</h2>
+            <div class="content">
+                <p>More information about Card 1...</p>
+            </div>
+        </div>
+        <div class="card" id="card2">
+            <h2>Card 2</h2>
+            <div class="content">
+                <p>More information about Card 2...</p>
+            </div>
+        </div>
+        <div class="card" id="card3">
+            <h2>Card 3</h2>
+            <div class="content">
+                <p>More information about Card 3...</p>
+            </div>
+        </div>
+    </div>
  <section class="features-section">
 
         <div class="carousel">
@@ -294,6 +344,16 @@ magin: 0px 5px;
 <p>Copyright &copy;2025; Designed by <span class="designer">Group1</p>
 </div>
 <script>
+    const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        // Remove 'expanded' class from all cards
+        cards.forEach(c => c.classList.remove('expanded'));
+        // Add 'expanded' class to the clicked card
+        card.classList.add('expanded');
+    });
+});
         const track = document.querySelector('.carousel-track');
         const slides = Array.from(track.children);
         const nextButton = document.querySelector('.next-btn');
