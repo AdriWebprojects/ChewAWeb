@@ -604,6 +604,7 @@ more convenient way
                 updateSlidePosition();
             }
         });
+        const hidden = document.querySelectorall('.hidden')
         const observer = new IntersectionObserver((entries) => {
 entries.forEach((entry) => {
 console.log(entry)
