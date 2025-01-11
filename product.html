@@ -410,9 +410,15 @@ Can be taken with or without meals.
 cards.forEach(card => {
     card.addEventListener('click', () => {
         
-        cards.forEach(c => c.classList.remove('expanded'));
-       
-        card.classList.add('expanded');
+        if (card.classList.contains('expanded')) {
+            
+            card.classList.remove('expanded');
+        } else {
+            
+            cards.forEach(c => c.classList.remove('expanded'));
+            
+            card.classList.add('expanded');
+        }
     });
 });
         const track = document.querySelector('.carousel-track');
